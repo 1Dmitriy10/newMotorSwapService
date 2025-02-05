@@ -65,12 +65,12 @@ summary::marker {
 }
 
 :root {
-  --primary-color: #242c3b;
-  --primary-white: #ffffff;
-  --primary-blue: #37b6e9;
-  --primary-gray: #364059;
+  --primary-color: #242C3B;
+  --primary-white: #FFFFFF;
+  --primary-blue:#37b6e9;
+  --primary-gray:#364059;
   --primary-grad: linear-gradient(90deg, #37b6e9 0%, #4b4ced 100%);
-  --secondary-grad: linear-gradient(90deg, #363e51 0%, #181c24 100%);
+  --secondary-grad:linear-gradient(90deg, #363e51 0%, #181c24 100%);
   --btn-grad: linear-gradient(142deg, #34c8e8 0%, #4e4af2 100%);
   --form-grad: linear-gradient(180deg, #34c8e8 0%, #4e4af2 100%);
   --fw-100: 100;
@@ -870,7 +870,7 @@ main {
   /* Даже IE решил присоединиться к вечеринке */
 }
 
-input[type="checkbox"] {
+input[type=checkbox] {
   accent-color: var(--primary-blue);
   /* Green color */
 }
@@ -903,17 +903,11 @@ input[type="checkbox"] {
 
 section.title {
   margin-top: clamp(1.25rem, 1.0561414392rem + 0.8271298594vw, 1.875rem);
-  margin-bottom: calc(
-    clamp(3.125rem, 1.1864143921rem + 8.2712985939vw, 9.375rem) -
-      clamp(3.125rem, 1.1864143921rem + 8.2712985939vw, 9.375rem) * 2
-  );
+  margin-bottom: calc(clamp(3.125rem, 1.1864143921rem + 8.2712985939vw, 9.375rem) - clamp(3.125rem, 1.1864143921rem + 8.2712985939vw, 9.375rem) * 2);
 }
 
 section.title_m {
-  margin-top: calc(
-    clamp(3.125rem, 1.1864143921rem + 8.2712985939vw, 9.375rem) -
-      clamp(3.125rem, 1.1864143921rem + 8.2712985939vw, 9.375rem) * 2 + 40px
-  );
+  margin-top: calc(clamp(3.125rem, 1.1864143921rem + 8.2712985939vw, 9.375rem) - clamp(3.125rem, 1.1864143921rem + 8.2712985939vw, 9.375rem) * 2 + 40px);
 }
 
 .news-item-content__container {
@@ -2489,15 +2483,15 @@ header {
 .our-contacts__box {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr) [3];
+  -ms-grid-columns: (1fr)[3];
   grid-template-columns: repeat(3, 1fr);
-  -ms-grid-rows: (1fr) [2];
+  -ms-grid-rows: (1fr)[2];
   grid-template-rows: repeat(2, 1fr);
   gap: 30px;
 }
 @media (max-width: 992px) {
   .our-contacts__box {
-    -ms-grid-columns: (1fr) [2];
+    -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
   }
 }
