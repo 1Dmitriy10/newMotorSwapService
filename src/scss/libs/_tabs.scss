@@ -1,0 +1,43 @@
+//=======================================================табы====================================================
+
+.tabs {
+    display: flex;
+    flex-direction: column;
+}
+
+.tabs__title-box {
+    display: flex;
+    width: 100%;
+
+    // @media (max-width: 600px) {
+    //     flex-direction: column;
+    //     align-items: flex-start;
+    // }
+}
+
+.tabs__title {
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+        transition: 0.3s;
+        text-shadow: 0 0 0.5px black;
+    }
+
+    &.active {
+        transition: 0.3s;
+        text-shadow: 0 0 0.5px black;
+    }
+}
+
+.tabs__item-box {}
+
+.tabs__item {
+    display: none;
+    flex: 1 1 100%;
+
+    &.active {
+        display: flex;
+    }
+}

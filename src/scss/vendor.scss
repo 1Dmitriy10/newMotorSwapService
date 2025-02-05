@@ -1,0 +1,501 @@
+// ================== Спойлеры ============
+
+summary {
+    display: flex;
+    align-items: center;
+
+    &::after {
+        content: '+';
+        display: flex;
+        margin-left: 20px;
+        transition: 0.3s;
+        transform: rotate(0deg);
+    }
+
+    &.active {
+        &::after {
+            transition: 0.3s;
+            transform: rotate(45deg);
+        }
+    }
+}
+
+
+// =========== Хлебные крошки ===============
+
+.breadcrambs__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+
+//========================= Табы =====================
+
+._tabs-js {
+    display: flex;
+    flex-direction: column;
+}
+
+.tabs__title-box {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.tabs__title {
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    width: fit-content;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+
+    &:hover {
+        transition: 0.3s;
+        background-color: rgba(72, 134, 226, 0.623);
+    }
+
+    &.active {
+        transition: 0.3s;
+        background-color: rgba(72, 134, 226, 0.623);
+    }
+}
+
+.tabs__item-box {}
+
+.tabs__item {
+    display: none;
+    flex: 1 1 100%;
+
+    &.active {
+        display: flex;
+    }
+}
+
+
+// ============== Пагинация =================
+
+.pagination {
+    display: flex;
+}
+
+.pagination__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.pagination__list-item {}
+
+.pagination__item-link {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+
+// ====================Меню===============================
+.nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    position: relative;
+
+    &.hidden {
+        display: none;
+    }
+
+    &>li {
+        &>.sub-menu {
+            display: none;
+            margin-top: 10px;
+            padding: 50px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            background-color: #ffffff;
+            z-index: 3;
+        }
+
+        &:hover {
+            &>.sub-menu {
+                display: flex;
+            }
+        }
+
+    }
+
+    &>a {
+        transition: 0.3s;
+
+        &:hover {
+            transition: 0.3s;
+            color: black;
+
+        }
+    }
+}
+
+.nav__item-wrap {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 600;
+    color: #666666;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    position: relative;
+    cursor: pointer;
+    margin-left: 0;
+}
+
+.nav__item-opacity-wrap>svg {
+    width: 40px;
+    height: 25px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.nav__item-wrap {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 600;
+    color: #666666;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    position: relative;
+    cursor: pointer;
+    margin-left: 0;
+}
+
+.nav__item-opacity {
+    position: fixed;
+    top: 50px;
+    right: 0;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px;
+    gap: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 0 21px -20px black;
+    transform: translateX(150%);
+
+    &>li>.sub-menu {
+        display: none;
+    }
+}
+
+.drop-menu {
+    position: relative;
+}
+
+.nav__item-wrap:hover>.nav__item-opacity {
+    transition: 0.3s;
+    transform: translateX(0);
+    z-index: 10;
+}
+
+
+//========мобильное меню==========
+
+// body{
+//     height: 100%;
+//     overflow: hidden; /* убедитесь, что iOS не пытается сначала прокрутить тело */
+// }
+// ------------------------кнопка бургера---------------------------
+.mob-nav-btn {
+    display: none;
+    position: relative;
+    z-index: 100;
+    min-width: 20px;
+    height: 16px;
+    background: none;
+    border: none;
+    align-items: center;
+    cursor: pointer;
+
+    &.show {
+        display: flex;
+    }
+
+    &>span {
+        display: flex;
+        width: 100%;
+        height: 2px;
+        background-color: black;
+        position: relative;
+
+        &::after {
+            content: "";
+            transition: 0.3s;
+            position: absolute;
+            display: flex;
+            width: 100%;
+            height: 2px;
+            background-color: black;
+            bottom: 7px;
+        }
+
+        &::before {
+            content: "";
+            transition: 0.3s;
+            position: absolute;
+            display: flex;
+            width: 100%;
+            height: 2px;
+            background-color: black;
+            top: 7px;
+        }
+    }
+
+    &.active {
+        &>span {
+            border: none;
+            height: 0;
+
+            &::after {
+                transition: 0.3s;
+                transform: rotate(45deg);
+                bottom: -1px;
+            }
+
+            &::before {
+                transition: 0.3s;
+                transform: rotate(-45deg);
+                top: -1px;
+            }
+        }
+    }
+
+    @media (max-width:600px) {
+        display: flex;
+    }
+}
+
+// ----------------------------мобильное меню----------------------------------------------------
+.mob-nav {
+    z-index: 100;
+    width: 100%;
+    padding: 50px 20px 20px 20px;
+    // transform: translateX(200%);
+    transition: 0.5s;
+    background: var(--primary-grad);
+    position: fixed;
+    top: 0;
+    left: 0;
+    // left: 10px;
+    bottom: 10px;
+    height: 100dvh;
+
+    opacity: 0;
+    overflow: scroll;
+    /* не автоматический! */
+    //   для сафари
+    // height: -webkit-fill-available;
+    -webkit-overflow-scrolling: touch;
+
+    &.horizontal {
+        transform: translateX(100%);
+
+        &.active {
+            transform: translateX(0);
+        }
+    }
+
+    &.vertical {
+        transform: translateY(-100%);
+
+        &.active {
+            transform: translateY(0);
+        }
+    }
+
+    &.active {
+        display: flex;
+        flex-direction: column;
+        // transform: translateX(95%);
+        right: 10px;
+        transition: 0.5s;
+        opacity: 1;
+
+    }
+
+    &>nav {
+        margin-bottom: 20px;
+    }
+
+}
+
+.mob-menu-exit {
+    width: 30px;
+    min-height: 30px;
+    border-radius: 100%;
+    background-color: #f2ece8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.mob-nav-list {
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    min-height: 70%
+}
+
+.mob-nav-link {
+    font-weight: 700;
+    font-size: 35px;
+    color: #000000;
+}
+
+.mob-nav-item>a {
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--primary-white);
+}
+
+.mob-nav-exit {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.mob-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+
+.social-box__mob {
+    margin-top: auto;
+
+    @include respond-to('tel') {
+        display: flex;
+    }
+
+}
+
+// -------------------------- спойлеры------------------------------------------
+._spoiler-js-menu {
+    color: white;
+    position: absolute;
+    top: 0;
+    right: -25px;
+    transition: 0.3s;
+}
+
+._spoiler-js-menu.active {
+    transition: 0.3s;
+    transform: rotate(180deg);
+}
+
+.mob-nav-item {
+    position: relative;
+    max-width: 150px;
+}
+
+.spoiler-content-menu {
+    margin-left: 10px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &>.mob-nav-item>a {
+        font-size: 14px;
+    }
+
+    &>.mob-nav-item>.spoiler-content-menu>.mob-nav-item>a {
+        font-weight: 500;
+    }
+
+}
+
+// ================ Карточки ===================
+
+.card-wrap {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.slider {
+    @include respond-to("nout") {
+        flex-wrap: nowrap;
+        scroll-snap-type: x mandatory;
+        overflow-x: auto;
+        // -----цвет скрола
+        scrollbar-color: green transparent;
+        scrollbar-width: thin;
+    }
+}
+
+.slide {
+    @include respond-to("nout") {
+        flex: 0 0 50%;
+        scroll-snap-align: start;
+
+    }
+
+    @include respond-to("tel") {
+        flex: 0 0 100% !important;
+    }
+
+}
+
+
+
+// -----------колличество колонок
+// .cols4 {
+//     flex: 0 1 calc((100% - 3 * var(--whycardColGap)) / 4);
+
+//     @include respond-to("pc-old") {
+//         flex: 0 1 calc((100% - 2 * var(--whycardColGap)) / 3);
+//     }
+
+//     @include respond-to("tab") {
+//         flex: 0 1 calc((100% - 1 * var(--whycardColGap)) / 2);
+//     }
+
+//     @include respond-to("tel") {
+//         flex: 0 1 100%;
+//     }
+// }
+
+// .cols3 {
+//     flex: 0 1 calc((100% - 2 * var(--whycardColGap)) / 3);
+
+//     @include respond-to("tab") {
+//         flex: 0 1 calc((100% - 1 * var(--whycardColGap)) / 2);
+//     }
+
+//     @include respond-to("tel") {
+//         flex: 0 1 100%;
+//     }
+// }
+
+// .cols2 {
+//     flex: 0 1 calc((100% - 1 * var(--whycardColGap)) / 2);
+
+//     @include respond-to("tab") {
+//         flex: 0 1 100%;
+//     }
+
+// }
+
+// .cols1 {
+//     flex: 0 1 100%;
+// }

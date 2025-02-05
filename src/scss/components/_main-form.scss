@@ -1,0 +1,145 @@
+.main-form {}
+
+.main-form__container {
+    display: flex;
+    gap: 20px;
+    padding: 50px 100px;
+    background: var(--primary-grad);
+    border-radius: 10px;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    @include respond-to("tel") {
+        padding: 30px 20px;
+    }
+}
+
+.main-form__text-box {
+    display: flex;
+    flex-direction: column;
+    max-width: 480px;
+
+}
+
+.main-form__title {
+    font-weight: 600;
+    font-size: clamp-px(18, 28);
+    color: var(--primary-white);
+    margin-bottom: 20px;
+}
+
+.main-form__subtitle {
+    font-weight: 600;
+    font-size: clamp-px(14, 16);
+    color: var(--primary-white);
+    margin-bottom: 20px;
+}
+
+.main-form__content-box {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+}
+
+.main-form__text {
+    font-weight: 500;
+    font-size: clamp-px(12, 14);
+    line-height: 140%;
+    color: var(--primary-white);
+
+    &>a {
+        color: var(--primary-white);
+    }
+}
+
+.main-form__form-box {
+    width: 100%;
+    max-width: 440px;
+
+    @include respond-to('pc-old') {
+        max-width: 480px;
+    }
+}
+
+.main-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+}
+
+.form__row-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    &>.form__row {
+        flex: 0 1 calc((100% - 1 * 20px) / 2);
+
+    }
+
+    @include respond-to("tel") {
+        flex-direction: column;
+    }
+}
+
+.form__row {
+    flex: 100%;
+
+    &>input {
+        background: rgba(217, 217, 217, 0.15);
+        border: 1px solid #242c3b;
+        border-radius: 3px;
+        padding: 9px 10px;
+        width: 100%;
+    }
+
+    &>textarea {
+        background: rgba(217, 217, 217, 0.15);
+        border: 1px solid #242c3b;
+        border-radius: 3px;
+        padding: 9px 10px;
+        width: 100%;
+        min-height: 80px;
+    }
+}
+
+.form-agree-box {
+    display: flex;
+    gap: 15px;
+}
+
+.checkbox {}
+
+
+
+.form-agree-text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 140%;
+    color: var(--primary-white);
+}
+
+.form-agree-link {
+    text-decoration: underline;
+    color: var(--primary-white);
+}
+
+.main-form__text_icons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.form-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 3px;
+    background-color: var(--primary-white);
+    border-radius: 2px;
+    width: 16px;
+    height: 16px;
+}

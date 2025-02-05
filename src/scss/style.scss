@@ -1,0 +1,140 @@
+//=============================внешние импорты===================================
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+//=============================рутовые стили===================================
+@import "fonts";
+@import "variables";
+@import "mixin";
+@import "reset";
+@import "root";
+@import "typography";
+@import "vendor";
+
+
+//========основные стили============
+body {
+    font-family: "Open Sans", serif;
+    background-color: var(--primary-color);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: clamp-px(50, 150);
+}
+
+.btn {
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    background: var(--btn-grad);
+    min-width: 200px;
+    padding: 15px 14px;
+
+    font-weight: 600;
+    font-size: clamp-px(14, 15);
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: var(--primary-white);
+    transition: 0.3s;
+
+    &:hover {
+        color: var(--primary-color);
+        box-shadow: 0 7px 7px 0 rgba(0, 0, 0, 0.25);
+        transition: 0.3s;
+    }
+}
+
+/* Для современных браузеров */
+::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    /* Вкус клубники? Да, пожалуйста! 🍓 */
+}
+
+/* WebKit: Chrome, Safari, Opera 15+ */
+::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    /* В WebKit разбираются в делах! */
+}
+
+/* Firefox 19+ */
+::-moz-placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+    /* Эй, Firefox, не делай моих детей прозрачными! */
+}
+
+/* IE 10+, Edge */
+:-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    /* Даже IE решил присоединиться к вечеринке */
+}
+
+input[type="checkbox"] {
+    accent-color: var(--primary-blue);
+    /* Green color */
+}
+
+.about-content__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-content__title {
+    align-self: center
+}
+
+.title__container {
+    display: flex;
+    flex-direction: column
+}
+
+section.title {
+    margin-top: clamp-px(20, 30);
+    // margin-bottom: clamp-px(30, 50);
+    // margin-bottom: -100px;
+    margin-bottom: calc(clamp-px(50, 150) - (clamp-px(50, 150) * 2));
+}
+
+section.title_m {
+    margin-top: calc(clamp-px(50, 150) - (clamp-px(50, 150) * 2) + 40px);
+}
+
+.news-item-content__container {
+    display: flex;
+    flex-direction: column
+}
+
+.popup-form-wrap {
+    background: var(--form-grad);
+    max-width: 500px
+}
+
+.popup-form-wrap.fancybox__content {
+    padding: 0 !important;
+    border-radius: 10px !important;
+}
+
+
+//==================================
+
+
+//================Импорты компонентов=====================
+
+@import "./components/header";
+@import "./components/footer";
+@import "./components/_banner";
+@import "./components/_block-services";
+@import "./components/block-news";
+@import "./components/_advantages";
+@import "./components/_main-form";
+@import "./components/_map";
+@import "./components/_inner-banner";
+@import "./components/_services";
+@import "./components/_service-content";
+@import "./components/preview-news";
+@import "./components/main-news";
+@import "./components/_our-contacts";

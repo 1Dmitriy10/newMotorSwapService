@@ -1,0 +1,133 @@
+.footer {
+    background: var(--secondary-grad);
+}
+
+.footer__container {
+    padding: clamp-px(20, 40);
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__top {
+    padding-bottom: clamp-px(20, 40);
+    border-bottom: 1px solid var(--primary-white);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.footer__menu {
+    &:first-child {
+        margin-right: clamp-px(50, 200);
+    }
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &>li>a {
+        font-weight: 600;
+        font-size: clamp-px(12, 16);
+        color: #adadad;
+        transition: 0.3s;
+
+        &:hover {
+            color: var(--primary-white);
+            transition: 0.3s;
+        }
+    }
+}
+
+.footer__contacts {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @include respond-to('pc-old') {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}
+
+.footer__contact {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+
+    font-weight: 400;
+    font-size: clamp-px(12, 16);
+    color: #adadad;
+
+    &>a {
+        font-weight: 400;
+        font-size: clamp-px(12, 16);
+        color: #adadad;
+        transition: 0.3s;
+
+        &:hover {
+            transition: 0.3s;
+            color: var(--primary-white);
+        }
+    }
+}
+
+.footer__social-box {
+    display: flex;
+    gap: 15px;
+}
+
+.footer__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    background-color: #4e5460;
+    padding: 5px;
+    border-radius: 3px;
+    transition: 0.3s;
+
+    &:hover {
+        transition: 0.3s;
+        transform: translateY(5%);
+    }
+
+    &>img {
+        // width: 25px;
+        // height: 25px;
+    }
+}
+
+.footer__bottom {
+    padding: clamp-px(20, 40) 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer__politic {
+    font-weight: 400;
+    font-size: clamp-px(10, 12);
+    color: #adadad;
+}
+
+.footer__backlink-box {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+
+    &>span {
+        font-weight: 400;
+        font-size: clamp-px(10, 12);
+        color: #adadad;
+    }
+
+    @include respond-to("tel") {
+        &>a>img {
+            width: 40px;
+        }
+    }
+}

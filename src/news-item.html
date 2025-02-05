@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('html/libs/head.html',{
+"title": "Главная"
+})
+
+<body>
+    @@include('html/libs/header.html')
+    <main>
+        @@include('html/inner-banner.html')
+
+        <section class="title title_m">
+            <div class="container title__container">
+                <h1 class="title services__title">
+                    Название новости
+                </h1>
+            </div>
+        </section>
+
+        <section class='news-item-content'>
+            <div class='container news-item-content__container content'></div>
+        </section>
+
+        @@include('html/preview-news.html')
+
+        @@include('html/main-form.html')
+        @@include('html/map.html')
+    </main>
+    @@include('html/libs/footer.html')
+</body>
+
+</html>

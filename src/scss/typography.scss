@@ -1,0 +1,74 @@
+h2.block-title {
+    @include font(600, clamp-px(22, 32), var(--primary-blue), 140%);
+    margin-bottom: clamp(1.25rem, 1.0561414392rem + 0.8271298594vw, 1.875rem);
+    align-self: center;
+}
+
+h1.title {
+    @include font(600, clamp-px(24, 38), var(--primary-blue), 140%);
+    margin-bottom: clamp-px(30, 40);
+    align-self: center;
+}
+
+.content p {
+    @include font(400, clamp-px(14, 16), var(--primary-white), 140%);
+    margin-bottom: 20px;
+}
+
+.content ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+
+    &>li {
+        @include font(400, clamp-px(14, 16), var(--primary-white), 140%);
+        display: flex;
+        gap: 10px;
+        align-items: center;
+
+        &::before {
+            content: "";
+            display: flex;
+            border-radius: 100%;
+            width: 5px;
+            height: 5px;
+            background-color: var(--primary-white);
+        }
+    }
+
+}
+
+.content ol {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    counter-reset: num 0;
+
+    &>li {
+        @include font(400, clamp-px(14, 16), var(--primary-white), 140%);
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        counter-increment: num 1;
+
+        &::before {
+            content: counter(num)'.';
+            display: flex;
+
+        }
+    }
+
+}
+
+.content h2 {
+    @include font(600, clamp-px(22, 32), var(--primary-white), 140%);
+    margin-bottom: clamp(1.25rem, 1.0561414392rem + 0.8271298594vw, 1.875rem);
+}
+
+// p:not(:last-of-type) {
+//     margin-bottom: 20px;
+// }

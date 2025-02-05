@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('html/libs/head.html',{
+"title": "Главная"
+})
+
+<body>
+    @@include('html/libs/header.html')
+    <main>
+        <section class='inner-banner inner-banner_big'>
+            <div class='container inner-banner__container'>
+                <img class="inner-banner__img" src="@img/banner/image 4.png" alt="">
+
+                <h1 class="banner-title">
+                    Свап двигателя
+                </h1>
+            </div>
+        </section>
+
+        @@include('html/service-content.html')
+
+        @@include('html/preview-news.html')
+
+        @@include('html/main-form.html')
+        @@include('html/map.html')
+    </main>
+    @@include('html/libs/footer.html')
+</body>
+
+</html>
